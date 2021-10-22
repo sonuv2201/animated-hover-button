@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Button Animation</title>
+	<style type="text/css">
+		body{
+			background: #606362;
+		}
+		.container{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+		}
+
+		a{
+			background: #0eb1ff;
+			padding:  10px 41px 13px;
+			color:#fff;
+			font-size: 25px;
+			font-family: sans-serif;
+			text-decoration: none;
+			box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+			transition: 0.5s;
+			position: relative;
+			z-index: 1;
+		}
+
+
+		a:hover{
+			background: #ff0eb5;
+		}
+
+		a:before{
+			content: "";
+			position: absolute;
+			left: 8px;
+			top: 8px;
+			background: #fff;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			transition: transform 0.5s ease-in-out;
+		}
+
+		.container a:after{
+			content: "";
+			position: absolute;
+			left: 8px;
+			top: 8px;
+			width: 100%;
+			height: 100%;
+			border: 1px solid #fff;
+			z-index: -1;
+			transition: 0.5s;
+		}
+
+		.container a:hover:after{
+			left: -8px;
+			top: -8px;
+		}
+
+		/* Top button*/
+		.container p:nth-child(1) a:before{
+			transform: scaleY(0);
+			transform-origin: bottom;
+		}
+
+		.container p:nth-child(1) a:hover:before{
+			transform: scaleY(1);
+			transform-origin: top;
+		}
+
+		/* Left button */
+		.container p:nth-child(2) a:before{
+			transform: scaleX(0);
+			transform-origin: right;
+		}
+
+		.container p:nth-child(2) a:hover:before{
+			transform: scaleX(1);
+			transform-origin: left;
+		}
+
+		/* Right Button */
+		.container p:nth-child(4) a:before{
+			transform: scaleX(0);
+			transform-origin: left;
+		}
+
+		.container p:nth-child(4) a:hover:before{
+			transform: scaleX(1);
+			transform-origin: right;
+		}
+
+		/* Buttom Button */
+		.container p:nth-child(5) a:before{
+			transform: scaleY(0);
+			transform-origin: top;
+		}
+
+		.container p:nth-child(5) a:hover:before{
+			transform: scaleY(1);
+			transform-origin: bottom;
+		}
+		 
+		.container p:nth-child(1){
+			width: 100%;
+		}
+
+		.container p:nth-child(2), 
+		.container p:nth-child(3), 
+		.container p:nth-child(4){
+			width: 32.33%;
+			box-sizing: border-box;
+		}
+
+		.container p:nth-child(5){
+			width: 100%;
+		}
+
+		 .container p{
+		 	display: inline-block;
+		 	text-align: center;
+		 	color: #fff;
+		 }
+
+		 .container p:nth-child(3){
+		 	font-size: 25px;
+		 	text-transform: uppercase;
+		 	font-family: sans-serif;
+		 }
+
+		 .container p {
+    		padding: 24px 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<p><a href="#">Top</a></p>
+		<p><a href="#">Left</a></p>
+		<p><b>Button</b></p>
+		<p><a href="#">Right</a></p>
+		<p><a href="#">Bottom</a></p>
+	</div>
+</body>
+</html>
